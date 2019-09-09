@@ -49,7 +49,7 @@ class Customer extends AbstractModel {
         'tags' => 'string optional',
         'account_type' => 'string optional',
         'first_purchase_at' => 'date optional',
-        'linked_accounts' => 'number optional',
+        'customer_organization_id' => 'string optional',
 
         'default_address' => 'object \Address optional',
         'social' => 'array object \SocialDetails optional',
