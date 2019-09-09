@@ -260,6 +260,8 @@ abstract class AbstractTransport {
 
     protected function send_account_event($accountEvent, $endpoint, $enforce_required_keys = true) {
         if ($this->validate($accountEvent, $enforce_required_keys)) {
+            if ($endpoint === 'login')
+                $accountEvent->login_status->failure_reason = str_replace('_', ' ', $accountEvent->login_status->failure_reason);
             $json = $accountEvent->toJson();
             return $this->send_account_json_request($json, $endpoint);
         }
