@@ -28,6 +28,9 @@ class Login extends AbstractModel {
         'social_login_type' => 'string /^(:?facebook|google|linkedin|twitter|yahoo|other)$/ optional',
         'login_status' => 'object \LoginStatus',
         'client_details' => 'object \ClientDetails',
+        'organization_id' => 'string optional',
+        'organization_admin_exists' => 'boolean optional',
+        'organization_admin_email' => 'string optional',
         'session_details' => 'object \SessionDetails'
     );
 }
