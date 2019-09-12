@@ -24,7 +24,7 @@ class CurlTransport extends AbstractTransport {
     /**
      * @var int
      */
-    public $timeout = 10;
+    public $timeout = 10 * 1000;
 
     /**
      * @param $order object Order to send
@@ -42,7 +42,7 @@ class CurlTransport extends AbstractTransport {
             CURLOPT_HTTPHEADER => $this->headers($json),
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_USERAGENT => $this->user_agent,
-            CURLOPT_TIMEOUT => $this->timeout,
+            CURLOPT_TIMEOUT_MS => $this->timeout,
             CURLOPT_FAILONERROR => false
         );
         curl_setopt_array($ch, $curl_options);
